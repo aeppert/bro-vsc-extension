@@ -1,0 +1,26 @@
+{
+    "name": "bro",
+    "displayName": "bro",
+    "description": "Bro Script Language Syntax Highlighting",
+    "version": "0.0.1",
+    "publisher": "aeppert",
+    "engines": {
+        "vscode": "^1.12.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "bro",
+            "aliases": ["Bro", "bro"],
+            "extensions": [".bro"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "bro",
+            "scopeName": "source.bro",
+            "path": "./syntaxes/bro.tmLanguage.json"
+        }]
+    }
+}
