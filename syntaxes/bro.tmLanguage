@@ -1,0 +1,206 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Bro",
+  "foldingStartMarker": "\\{\\s*$",
+  "foldingStopMarker": "^\\s*\\}",
+	"patterns": [
+      {
+        "begin": "\"",
+        "beginCaptures": {
+          "0": {
+            "name": "punctuation.definition.string.begin.bro"
+          }
+        },
+        "end": "\"",
+        "endCaptures": {
+          "0": {
+            "name": "punctuation.definition.string.end.bro"
+          }
+        },
+        "name": "string.quoted.double.bro",
+        "patterns": [
+          {
+            "include": "#string_escaped_char"
+          },
+          {
+            "include": "#string_placeholder"
+          }
+        ]
+    },
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.bro",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.bro",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.bro",
+					"match": "\\\\."
+				}
+			]
+		},
+    "directives": {
+      "patterns": [
+        {
+          "begin": "^\\s*(\\@(?:load|load-sigs|unload))\\s+(.*)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.control.import.bro",
+            },
+            "2": {
+              "name": "meta.definition.bro",
+            },
+          },
+          "end": "$",
+          "name": "meta.preprocessor.bro",
+        },
+        {
+          "begin": "^\\s*(\\@prefixes)\\s+(=|\\+=)\\s+([a-zA-Z_][0-9a-zA-Z_-]+)\\b"
+          "captures":
+            "1":
+              "name": "keyword.control.def.bro"
+            "2":
+              "name": "keyword.operator.assignment.bro"
+            "3":
+              "name": "text.plain.bro"
+          "end": "$"
+          "name": "meta.preprocessor.bro"
+        }
+        {
+          "captures":
+            "1":
+              "name": "keyword.other.directive.bro"
+            "2":
+              "name": "keyword.control.directive.bro"
+          "match": "^\\s*(\\@)(if|ifdef|ifndef|else|endif)\\b"
+          "name": "meta.preprocessor.bro"
+        }
+        {
+          "captures":
+            "1":
+              "name": "constant.other.placeholder.bro"
+          "match": "(\\@DEBUG|\\@DIR|\\@FILENAME)"
+          "name": "meta.preprocessor.bro"
+        }
+      ]
+    },
+    "illegal_names": {
+      "patterns": [
+        {
+          "match": "(bool|int|count|double|time|interval|string|pattern|enum|port|addr|subnet|any|table|set|vector|record|opaque|file|function|event|hook)",
+          "name": "invalid.illegal.name.type.bro"
+        }
+      ]
+    },
+    "operator": {
+      "patterns": [
+        {
+          "match": "\\b(of)\\b",
+          "name": "keyword.operator.bro"
+        },
+        {
+          "match": "(\\!|&&|\\|\\||\\b(in)\\b)",
+          "name": "keyword.operator.logical.bro"
+        },
+        {
+          "match": "(<|<\\=|>\\=|>|\\=\\=|\\!\\=)",
+          "name": "keyword.operator.comparison.bro"
+        },
+        {
+          "match": "(\\+\\=|-\\=|\\*\\=|/\\=)",
+          "name": "keyword.operator.assignment.augmented.bro"
+        },
+        {
+          "match": "(\\+\\+|\\-\\-)",
+          "name": "keyword.operator.increment-decrement.bro"
+        },
+        {
+          "match": "(\\+|\\-|\\*|/|%)(?!\\+|\\-)",
+          "name": "keyword.operator.arithmetic.bro"
+        },
+        {
+          "match": "(\\=)",
+          "name": "keyword.operator.assignment.bro"
+        },
+        {
+          "match": "(?<!\\|)(\\|)(?!\\|)",
+          "name": "keyword.operator.length.bro"
+        }
+      ]
+    },
+    "string_escaped_char": {
+      "patterns": [
+        {
+          "match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3]\\d{0,2}|[4-7]\\d?|x[a-fA-F0-9]{0,2})",
+          "name": "constant.character.escape.bro"
+        },
+        {
+          "match": "\\\\(\\\\|[/\\^\\$\\{\\}\\[\\]\\(\\)\\.\\*\\+\\?\\|\\-])",
+          "name": "constant.character.escape.bro"
+        },
+        {
+          "match": "\\\\.",
+          "name": "invalid.illegal.unknown-escape.bro"
+        }
+      ]
+    },
+    "statements": {
+      "patterns": [
+        {
+          "match": "\\b(add|delete|print|for|next|break|if|else|switch|case|default|break|fallthrough|when|schedule|return)\\b",
+          "name": "keyword.control.flow.bro"
+        }
+      ]
+    },
+    "string_placeholder": {
+      "patterns": [
+        {
+          "match": "(\\d+\\$)?",
+          "name": "field.language.bro"
+        },
+        {
+          "match": "[#0\\- +']*",
+          "name": "flags.language.bro"
+        },
+        {
+          "match": "[,;:_]?",
+          "name": "separator.language.bro"
+        },
+        {
+          "match": "((-?\\d+)|\\*(-?\\d+\\$)?)?",
+          "name": "minimum_field_width.language.bro"
+        },
+        {
+          "match": "(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?",
+          "name": "precision.language.bro"
+        },
+        {
+          "match": "(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)?",
+          "name": "length_modifier.language.bro"
+        },
+        {
+          "match": "[diouxXDOUeEfFgGaACcSspn%]",
+          "name": "conversion_type.language.bro"
+        },
+        {
+          "match": "%",
+          "name": "invalid.illegal.placeholder.bro"
+        }
+      ]
+    }
+	},
+	"scopeName": "source.bro"
+}

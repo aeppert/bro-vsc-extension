@@ -28,7 +28,7 @@
             {
                 "language": "bro",
                 "scopeName": "source.bro",
-                "path": "./syntaxes/bro.tmLanguage.json"
+                "path": "./syntaxes/bro.tmLanguage"
             }
         ]
     }
