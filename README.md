@@ -4,7 +4,7 @@ Microsoft Visual Studio Code language extension for Bro Script
 
 ## Features
 
-Based on https://github.com/sethhall/bro.tmbundle
+Based on https://github.com/blacktop/language-bro
 
 ## Requirements
 
@@ -15,10 +15,6 @@ Visual Studio Code
 
 ## Known Issues
 
-Likely many syntax related.
 
 ## Release Notes
 
-### 0.0.1
-
-Initial release.

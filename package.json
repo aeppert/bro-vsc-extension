@@ -2,7 +2,7 @@
     "name": "bro",
     "displayName": "bro",
     "description": "Bro Script Language Syntax Highlighting",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "publisher": "aeppert",
     "engines": {
         "vscode": "^1.12.0"
@@ -13,12 +13,13 @@
     },
     "categories": [
         "Languages",
-        "Formatters"
+        "Formatters",
+	"Snippets"
     ],
     "keywords": [
-		"bro",
-		"bro-script"
-	],
+        "bro",
+        "bro-script"
+    ],
     "contributes": {
         "languages": [
             {
@@ -37,7 +38,7 @@
             {
                 "language": "bro",
                 "scopeName": "source.bro",
-                "path": "./syntaxes/bro.tmLanguage"
+                "path": "./syntaxes/bro.json"
             }
         ]
     }
