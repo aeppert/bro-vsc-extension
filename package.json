@@ -1,45 +1,49 @@
 {
-    "name": "bro",
-    "displayName": "bro",
-    "description": "Bro Script Language Syntax Highlighting",
-    "version": "0.4.0",
-    "publisher": "aeppert",
-    "engines": {
-        "vscode": "^1.12.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/aeppert/bro-vsc-extension.git"
-    },
-    "categories": [
-        "Languages",
-        "Formatters",
-	"Snippets"
-    ],
-    "keywords": [
+	"name": "bro",
+	"displayName": "bro/zeek",
+	"description": "Bro/Zeek Script Language Syntax Highlighting",
+	"version": "0.5.1",
+	"publisher": "aeppert",
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aeppert/bro-vsc-extension.git"
+	},
+	"categories": [
+		"Languages",
+		"Formatters",
+		"Snippets"
+	],
+	"keywords": [
         "bro",
-        "bro-script"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "bro",
-                "aliases": [
-                    "Bro",
-                    "bro"
-                ],
-                "extensions": [
-                    ".bro"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "bro",
-                "scopeName": "source.bro",
-                "path": "./syntaxes/bro.json"
-            }
-        ]
-    }
+        "bro-script",
+        "zeek",
+        "zeek-script"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "bro",
+				"aliases": [
+					"Bro",
+                    "bro",
+                    "Zeek",
+                    "zeek"
+				],
+				"extensions": [
+					".bro"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "bro",
+				"scopeName": "source.bro",
+				"path": "./syntaxes/bro.json"
+			}
+		]
+	}
 }
