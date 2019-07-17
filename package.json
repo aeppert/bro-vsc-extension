@@ -2,7 +2,7 @@
 	"name": "bro",
 	"displayName": "bro/zeek",
 	"description": "Bro/Zeek Script Language Syntax Highlighting",
-	"version": "0.5.1",
+	"version": "0.6.0",
 	"publisher": "aeppert",
 	"engines": {
 		"vscode": "^1.12.0"
