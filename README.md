@@ -1,6 +1,6 @@
-# bro 
+# Zeek 
 
-Microsoft Visual Studio Code language extension for Bro Script
+Microsoft Visual Studio Code language extension for (Zeek) Bro Script
 
 ## Features
 
