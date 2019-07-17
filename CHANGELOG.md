@@ -4,7 +4,7 @@ All notable changes to the "bro" extension will be documented in this file.
 ## [Unreleased]
 - Initial release
 
-## [1.0.0] - 2019-07-17
+## [0.6.0] - 2019-07-17
 ### Added
 - Proper Zeek support [@ZekeMedley](https://github.com/ZekeMedley)
 
