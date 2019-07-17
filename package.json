@@ -25,23 +25,24 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "bro",
+				"id": "zeek",
 				"aliases": [
+					"Zeek",
 					"Bro",
                     "bro",
-                    "Zeek",
                     "zeek"
 				],
 				"extensions": [
-					".bro"
+					".bro",
+					".zeek"
 				],
 				"configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
 			{
-				"language": "bro",
-				"scopeName": "source.bro",
+				"language": "zeek",
+				"scopeName": "source.zeek",
 				"path": "./syntaxes/bro.json"
 			}
 		]
