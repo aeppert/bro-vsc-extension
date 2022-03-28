@@ -45,6 +45,13 @@
 				"scopeName": "source.zeek",
 				"path": "./syntaxes/bro.json"
 			}
+		],
+		"snippets": [
+			{
+				"language": "zeek",
+				"scopeName": "source.zeek",
+				"path": "./snippets/bro.json"
+			}
 		]
 	}
 }

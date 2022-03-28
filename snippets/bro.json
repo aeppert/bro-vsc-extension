@@ -14,7 +14,7 @@
     },
     "notice": {
       "prefix": "notice",
-      "body": "NOTICE([$note=$1,\n        $msg=fmt(\"$3\", $4),\n        $conn=${5:c},\n        $sub=fmt(\"$6\", $7)]);"
+      "body": "NOTICE([\\$note=$1,\n        \\$msg=fmt(\"$3\", $4),\n        \\$conn=${5:c},\n        \\$sub=fmt(\"$6\", $7)]);"
     },
     "when statement": {
       "prefix": "when",
